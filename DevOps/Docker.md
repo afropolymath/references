@@ -125,6 +125,12 @@ docker-composer up -d server
 
 ## Other Notes
 
+#### Accessing host from within the docker containers
+
+```
+docker.for.mac.host.internal
+```
+
 #### Enable mod_rewrite on Apache on Ubuntu OS
 
 ```sh
