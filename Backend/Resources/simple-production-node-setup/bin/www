@@ -1,0 +1,19 @@
+#!/usr/bin/env node
+
+const http = require('http');
+const chalk = require('chalk');
+
+const app = require('../app.js');
+const db = require('../api/lib/db');
+
+db.initialize();
+
+const port = parseInt(process.env.PORT, 10) || 5000;
+app.set('port', port);
+
+const server = http.createServer(app);
+
+server.listen(port, () => {
+  console.log('%s App is running at http://localhost:%d in %s mode', chalk.green('✓'), app.get('port'), app.get('env'));
+  console.log('  Press CTRL-C to stop\n');
+})
